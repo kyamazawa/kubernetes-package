@@ -73,12 +73,12 @@ fi
 # If any of these versions are updated, please also update them in
 # addon-templates/README.md
 ADDONS_DIR=/etc/kubernetes/addons
-DASHBOARD_IMAGE=kubernetes-dashboard-amd64:v1.8.0
-KUBEDNS_IMAGE=k8s-dns-kube-dns-amd64:1.14.5
-GRAFANA_IMAGE=heapster-grafana-amd64:v4.4.3
-HEAPSTER_IMAGE=heapster-amd64:v1.4.0
-INFLUXDB_IMAGE=heapster-influxdb-amd64:v1.3.3
-TILLER_IMAGE=tiller:v2.6.1
+DASHBOARD_IMAGE=kubernetes-dashboard-arm64:v1.8.0
+KUBEDNS_IMAGE=k8s-dns-kube-dns-arm64:1.14.5
+GRAFANA_IMAGE=heapster-grafana-arm64:v4.4.3
+HEAPSTER_IMAGE=heapster-arm64:v1.4.0
+INFLUXDB_IMAGE=heapster-influxdb-arm64:v1.3.3
+TILLER_IMAGE=tiller:v2.6.1 # no ARM64
 
 for f in $(find $ADDONS_DIR -name '*.yaml'); do
   sed -i "s|\$GCR_IO_REGISTRY|$GCR_IO_REGISTRY|g" ${f}
