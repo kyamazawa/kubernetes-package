@@ -43,7 +43,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -y \
     && DEBIAN_FRONTEND=noninteractive apt-get autoremove -y \
     && DEBIAN_FRONTEND=noninteractive apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN curl -sLf --insecure http://docker.atbsd.com/builds/Linux/arm64/docker-1.12.6.tgz | tar xvzf - -C /usr/bin --strip-components=1 docker/docker-runc docker/docker \
+RUN curl -sLf --insecure https://docker.atbsd.com/builds/Linux/arm64/docker-1.13.1.tgz | tar xvzf - -C /usr/bin --strip-components=1 docker/docker-runc docker/docker \
     && mv /usr/bin/docker-runc /usr/bin/runc \
     && curl -sLf https://github.com/rancher/docker/releases/download/v1.11.2-ros1/docker-1.11.2_arm64.tgz | tar xvzf - -C /usr/bin --strip-components=1 docker/docker-runc \
     && mv /usr/bin/docker-runc /usr/bin/runc-1.11 \
